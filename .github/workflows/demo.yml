@@ -37,6 +37,10 @@ jobs:
         with:
           name: my-artifact
       - name: output downloaded files
-        run: ls    
+        run: |
+          ls
+          pwd
+          cd ..
+          ls -la
       - name: Deploy
         run: echo "Deploying..."
