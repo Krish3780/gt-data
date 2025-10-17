@@ -8,6 +8,7 @@ jobs:
       - name: show working dir
         run: |
           pwd
+          cd ..
           ls -ll
           df -h
           echo " my message"
