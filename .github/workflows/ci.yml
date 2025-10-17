@@ -18,6 +18,12 @@ jobs:
           name: my-artifact
           path: |
               /home/runner/work
+      - name: download files
+        uses: actions/download-artifact@v4
+        with:
+          name: my-artifact
+      - name: output the content
+        run: ls          
 
 
 
