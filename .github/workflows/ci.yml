@@ -1,0 +1,22 @@
+name: CI workflow
+on: workflow_dispatch
+
+jobs:
+  workdir:
+    runs-on: ubuntu-latest
+    steps:
+      - name: show working dir
+        run: |
+          pwd
+          ls -ll
+          df -h
+          echo " my message"
+
+
+
+# jobs:
+#   build-job:
+#   runs-on: ubuntu-latest
+#   steps:
+#     - name: get code
+#       uses: actions/checkout@v5
