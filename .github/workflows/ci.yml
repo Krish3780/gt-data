@@ -17,8 +17,7 @@ jobs:
         with:
           name: my-artifact
           path: |
-            ./public
-            ./demo.yml
+              /home/runner/work
 
 
 
