@@ -13,6 +13,7 @@ jobs:
           /home/runner/work/_temp/
         key: ${{ runner.os }}-primes
   cached-value:
+  needs: build
   runs-on: ubuntu-latest
   steps:
     - name: cache some data
