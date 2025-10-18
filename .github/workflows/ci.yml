@@ -22,7 +22,10 @@ jobs:
               /home/runner/work
       - name: publish output
         id: step1
-        run: echo "test=${{ job.container.id }}" >> $GITHUB_OUTPUT
+        run: |
+          echo "test=abcdef" >> $GITHUB_OUTPUT
+          echo "${{ toJSON.GITHUB_OUTPUT }}"
+
       - name: download files
         uses: actions/download-artifact@v4
         with:
