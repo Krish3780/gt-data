@@ -26,7 +26,7 @@ jobs:
           echo "test=abcdef" >> "$GITHUB_OUTPUT"
           echo "$GITHUB_OUTPUT"
           sudo ls -l /home/runner/work/_temp/_runner_file_commands/
-          sudo cat /home/runner/work/_temp/_runner_file_commands/step_summary_8f81869e-b895-4c80-9ff8-88f8bc085f97
+          sudo cat /home/runner/work/_temp/_runner_file_commands/step_summary_*
       - name: download files
         uses: actions/download-artifact@v4
         with:
