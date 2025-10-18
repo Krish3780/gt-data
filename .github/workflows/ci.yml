@@ -2,8 +2,10 @@ name: CI workflow
 on: workflow_dispatch
 
 jobs:
-  workdir:
+  job1:
     runs-on: ubuntu-latest
+    outputs:
+      output1: ${{ steps.step1.output.test }}
     steps:
       - name: show working dir
         run: |
@@ -18,12 +20,22 @@ jobs:
           name: my-artifact
           path: |
               /home/runner/work
+      - name: publish output
+        id: step1
+        run: echo "test=hello world" >> $GITHUB_OUTPUT
       - name: download files
         uses: actions/download-artifact@v4
         with:
           name: my-artifact
       - name: output the content
-        run: ls          
+        run: ls 
+  job2:
+    runs-on: ubuntu-latest
+    needs: job1
+    steps:
+      - name: print output from previous job
+        run: echo "${{ needs.job1.outputs.output1 }}"
+
 
 
 
